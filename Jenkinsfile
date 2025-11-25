@@ -45,19 +45,20 @@ pipeline {
                 echo "Deploying to GKE..."
 
                 sh """
-                    sed -i "s|image: chaewon121/bookmoa.*|image: chaewon121/bookmoa:${env.BUILD_ID}|" k8s/deployment.yaml
+                    sed -i "s|image: chaewon121/bookmoa.*|image: chaewon121/bookmoa:${env.BUILD_ID}|" deployment.yaml
                 """
 
-                step([
-                    $class: 'KubernetesEngineBuilder',
-                    projectId: PROJECT_ID,
-                    clusterName: CLUSTER_NAME,
-                    location: LOCATION,
-                    manifestPattern: 'k8s/*.yaml',
-                    credentialsId: CREDENTIALS_ID,
-                    verifyDeployments: true
+            step([
+                $class: 'KubernetesEngineBuilder',
+                projectId: PROJECT_ID,
+                clusterName: CLUSTER_NAME,
+                location: LOCATION,
+                manifestPattern: '*.yaml',   // ← 루트에서 YAML 찾음
+                credentialsId: CREDENTIALS_ID,
+                verifyDeployments: true
                 ])
             }
+
         }
     }
 }
