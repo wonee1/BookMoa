@@ -17,6 +17,6 @@ WORKDIR /app
 
 COPY --from=builder /app /app
 
-EXPOSE 3000            # ← 여기 3000으로 변경
+EXPOSE 3000           
 
 CMD ["npm", "start"]
