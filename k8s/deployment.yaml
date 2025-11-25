@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookmoa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookmoa
+  template:
+    metadata:
+      labels:
+        app: bookmoa
+    spec:
+      containers:
+      - name: bookmoa
+        image: asia-northeast3-docker.pkg.dev/<PROJECT-ID>/bookmoa/bookmoa:latest
+        ports:
+        - containerPort: 3000
