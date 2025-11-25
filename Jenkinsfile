@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // 환경 변수는 사용자님의 실제 GKE 및 Jenkins 설정 값입니다.
         PROJECT_ID     = 'warm-utility-455909-s5'
         CLUSTER_NAME   = 'bookmoa-cluster1'
         LOCATION       = 'asia-northeast3-c'
@@ -49,7 +48,7 @@ pipeline {
 
                 // 1. deployment.yaml에 이미지 태그 업데이트 및 디버깅 🚀
                 sh """
-                    # 💡 sed 개선: 'image:' 다음의 모든 내용을 새 이미지:태그로 완벽하게 대체하여 YAML 포맷 손상 방지
+                    # sed 개선: 'image:' 다음의 모든 내용을 새 이미지:태그로 완벽하게 대체하여 YAML 포맷 손상 방지
                     # 이 명령은 라인의 들여쓰기를 포함한 image: 다음의 모든 문자를 치환합니다.
                     sed -i "s|image:.*|image: chaewon121/bookmoa:${env.BUILD_ID}|" deployment.yaml
                     
