@@ -73,7 +73,8 @@ pipeline {
             manifestPattern: 'service.yaml', 
             credentialsId: CREDENTIALS_ID,
             verifyDeployments: true
-        ])
+            ])
+            }
+        }
     }
-}
 }
