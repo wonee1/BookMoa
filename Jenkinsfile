@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo "Building Docker image..."
-                    app = docker.build("wonee1/bookmoa:${env.BUILD_ID}")
+                    app = docker.build("chaewon121/bookmoa:${env.BUILD_ID}")
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
                 echo "Deploying to GKE..."
 
                 sh """
-                    sed -i "s|image: wonee1/bookmoa.*|image: wonee1/bookmoa:${env.BUILD_ID}|" k8s/deployment.yaml
+                    sed -i "s|image: chaewon121/bookmoa.*|image: chaewon121/bookmoa:${env.BUILD_ID}|" k8s/deployment.yaml
                 """
 
                 step([
