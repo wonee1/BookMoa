@@ -53,7 +53,7 @@ pipeline {
                     projectId: PROJECT_ID,
                     clusterName: CLUSTER_NAME,
                     location: LOCATION,
-                    manifestPattern: 'k8s/**',
+                    manifestPattern: 'k8s/*.yaml',
                     credentialsId: CREDENTIALS_ID,
                     verifyDeployments: true
                 ])
