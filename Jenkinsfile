@@ -53,7 +53,7 @@ pipeline {
                 projectId: PROJECT_ID,
                 clusterName: CLUSTER_NAME,
                 location: LOCATION,
-                manifestPattern: 'deployment.yaml,service.yaml',
+                manifestPattern: '**/*.yaml',
                 credentialsId: CREDENTIALS_ID,
                 verifyDeployments: true
                 ])
