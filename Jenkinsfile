@@ -53,7 +53,7 @@ pipeline {
                 projectId: PROJECT_ID,
                 clusterName: CLUSTER_NAME,
                 location: LOCATION,
-                manifestPattern: '*.yaml',   // ← 루트에서 YAML 찾음
+                manifestPattern: 'deployment.yaml,service.yaml',
                 credentialsId: CREDENTIALS_ID,
                 verifyDeployments: true
                 ])
