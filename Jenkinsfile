@@ -5,7 +5,7 @@ pipeline {
         PROJECT_ID     = 'warm-utility-455909-s5'
         CLUSTER_NAME   = 'bookmoa-cluster1'
         LOCATION       = 'asia-northeast3-c'
-        CREDENTIALS_ID = '11a74dda-01be-43ba-b432-4eb6303b68cc'
+        CREDENTIALS_ID = '41b37ed5-5a02-4cb3-b41c-3200ac6eb4b3'
     }
 
     stages {
