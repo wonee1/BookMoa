@@ -15,8 +15,10 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# 빌드 단계에서 복사한 내용 복사
 COPY --from=builder /app /app
 
+# 3000 포트 사용
 EXPOSE 3000           
 
 CMD ["npm", "start"]
