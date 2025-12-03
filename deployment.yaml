@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # 배포 리소스 정의
 metadata:
   name: bookmoa
 spec:
