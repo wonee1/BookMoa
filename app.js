@@ -8,23 +8,7 @@ const ejsLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 
-
-/** 프로덕션(K8s)에서는 dotenv 실행 금지 */
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
-}
-
-/** 서버 시작 시 MySQL 연결 테스트 */
-(async () => {
-  try {
-    const conn = await pool.getConnection();
-    console.log("✅ MySQL 연결 성공");
-    conn.release();
-  } catch (err) {
-    console.error("❌ MySQL 연결 실패:", err.message);
-  }
-})();
-
+dotenv.config();
 
 const app = express();
 
