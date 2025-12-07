@@ -12,15 +12,21 @@ spec:
       labels:
         app: bookmoa
     spec:
+      dnsPolicy: Default
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"
+        - name: single-request-reopen
       containers:
       - name: bookmoa
         image: asia-northeast3-docker.pkg.dev/<PROJECT-ID>/bookmoa/bookmoa:latest
         ports:
         - containerPort: 3000
-
+        
         env:
         - name: DB_HOST
-          value: "34.50.41.0"   
+          value: "34.50.41.0"
         - name: DB_PORT
           value: "3306"
         - name: DB_USER
@@ -29,14 +35,11 @@ spec:
           value: "1234"
         - name: DB_NAME
           value: "bookmoa"
-
         - name: DATA4LIBRARY_API_KEY
           value: "318748ba9689607f192e7fd0867ee5bf438ab83cf12cb429a3e988381e5f5cfb"
-
         - name: NAVER_CLIENT_ID
           value: "gh2yzl0lkm"
         - name: NAVER_CLIENT_SECRET
           value: "kthOLBKAe1gEGgWUkNoMIvhshluiVo1oNI5H10SQ"
-
         - name: JWT_SECRET
           value: "9tWZrMYl08GBOMX6H13inRJztNkzYPs0"
