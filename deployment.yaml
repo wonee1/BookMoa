@@ -29,3 +29,14 @@ spec:
           value: "1234"
         - name: DB_NAME
           value: "bookmoa"
+
+        - name: DATA4LIBRARY_API_KEY
+          value: "318748ba9689607f192e7fd0867ee5bf438ab83cf12cb429a3e988381e5f5cfb"
+
+        - name: NAVER_CLIENT_ID
+          value: "gh2yzl0lkm"
+        - name: NAVER_CLIENT_SECRET
+          value: "kthOLBKAe1gEGgWUkNoMIvhshluiVo1oNI5H10SQ"
+
+        - name: JWT_SECRET
+          value: "9tWZrMYl08GBOMX6H13inRJztNkzYPs0"
