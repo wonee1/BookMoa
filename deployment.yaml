@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment # 배포 리소스 정의
+kind: Deployment
 metadata:
   name: bookmoa
 spec:
@@ -17,3 +17,15 @@ spec:
         image: asia-northeast3-docker.pkg.dev/<PROJECT-ID>/bookmoa/bookmoa:latest
         ports:
         - containerPort: 3000
+
+        env:
+        - name: DB_HOST
+          value: "34.50.41.0"   
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_USER
+          value: "bookmoa"
+        - name: DB_PASSWORD
+          value: "1234"
+        - name: DB_NAME
+          value: "bookmoa"
