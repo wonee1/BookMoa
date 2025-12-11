@@ -72,7 +72,7 @@ pipeline {
                 // 3. service.yaml 적용 (KubernetesEngineBuilder 스텝 2)
                 echo "Applying service.yaml..."
                 step([
-                    $class: 'KubernetesEngineBuilder',
+                    $class: 'KubernetesEngineBuilder', //GKE에 서비스 리소스 적용
                     projectId: PROJECT_ID,
                     clusterName: CLUSTER_NAME,
                     location: LOCATION,
