@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: bookmoa
 spec:
-  replicas: 1
+  replicas: 3 #3개의 Pod 생성
+  stredegy:
+    type: RollingUpdate #업데이트 전략 설정
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app: bookmoa
