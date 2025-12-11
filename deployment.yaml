@@ -4,7 +4,7 @@ metadata:
   name: bookmoa
 spec:
   replicas: 3 #3개의 Pod 생성
-  stredegy:
+  strategy:
     type: RollingUpdate #업데이트 전략 설정
     rollingUpdate:
       maxUnavailable: 1
